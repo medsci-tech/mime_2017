@@ -27,6 +27,7 @@ class CreateCustomersTable extends Migration
             $table->string('age')->comment('年龄');
             $table->string('title')->comment('职称');
             $table->string('office')->comment('科室');
+            $table->boolean('authorized')->default(False)->comment('是否认证');
 
             $table->string('inviter_phone', 11)->nullable()->comment('邀请人电话');
 
