@@ -16,12 +16,10 @@ class CreateHospitalsTable extends Migration
         //
         Schema::create('hospitals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 60)->unique()->comment('医院名字');
+            $table->string('name')->unique()->comment('医院名字');
             $table->string('province')->comment('省');
             $table->string('city')->comment('市');
             $table->string('area')->comment('区');
-
-            $table->string('type')->nullable()->comment('医院类型');
             $table->timestamps();
         });
     }
