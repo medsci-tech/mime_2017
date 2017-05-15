@@ -17,15 +17,21 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('customer_role_id')->nullable()->comment('角色id');
+
             $table->string('phone', 11)->unique()->comment('用户电话');
-            $table->string('password')->nullable()->comment('用户密码 明文');
+            $table->string('password')->comment('用户密码');
 
+            $table->string('name')->comment('名字');
+            $table->string('sex')->comment('性别');
+            $table->string('age')->comment('年龄');
+            $table->string('title')->comment('职称');
+            $table->string('office')->comment('科室');
 
-            $table->string('name')->nullable()->comment('用户名字');
-            $table->string('email', 40)->unique()->nullable()->comment('用户邮箱');
-            $table->text('remark')->nullable()->comment('备注');
+            $table->string('inviter_phone', 11)->nullable()->comment('邀请人电话');
+
             $table->timestamps();
-            $table->foreign('med_role_id')->references('id')->on('med_roles');
+
+            $table->foreign('customer_role_id')->references('id')->on('customer_roles');
         });
     }
 
