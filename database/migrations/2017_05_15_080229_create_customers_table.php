@@ -16,7 +16,8 @@ class CreateCustomersTable extends Migration
         //
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('customer_role_id')->nullable()->comment('角色id');
+            $table->unsignedInteger('customer_role_id')->comment('角色id');
+            $table->unsignedInteger('hospital_id')->comment('医院id');
 
             $table->string('phone', 11)->unique()->comment('用户电话');
             $table->string('password')->comment('用户密码');
@@ -32,6 +33,7 @@ class CreateCustomersTable extends Migration
             $table->timestamps();
 
             $table->foreign('customer_role_id')->references('id')->on('customer_roles');
+            $table->foreign('hospital_id')->references('id')->on('hospitals');
         });
     }
 
@@ -45,6 +47,7 @@ class CreateCustomersTable extends Migration
         //
         Schema::table('customers', function(Blueprint $table) {
             $table->dropForeign('customers_role_id_foreign');
+            $table->dropForeign('customers_hospital_id_foreign');
         });
         Schema::dropIfExists('customers');
     }
