@@ -18,11 +18,11 @@ class CreateAuthorizedCustomersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('customer_id')->comment('用户id');
 
-            $table->string('id_front_end')->comment('身份证照片正面URI');
-            $table->string('id_back_end')->comment('身份证照片背面URI');
-            $table->string('pqc_front_end')->comment('医师资格证书照片正面URI');
-            $table->string('pqc_back_end')->comment('医师资格证书照片背面URI');
-            $table->string('badge_front_end')->comment('职称证照片正面URI');
+            $table->string('real_name')->comment('真实姓名');
+            $table->string('photo_url')->comment('照片');
+            $table->string('id')->comment('身份证');
+            $table->string('pqc')->comment('医师资格证');
+            $table->string('ppqc')->comment('执业资格证');
 
             $table->timestamps();
             $table->foreign('customer_id')->references('id')->on('customers');
