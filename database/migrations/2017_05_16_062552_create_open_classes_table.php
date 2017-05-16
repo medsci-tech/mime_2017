@@ -25,7 +25,9 @@ class CreateOpenClassesTable extends Migration
             $table->string('title')->comment('名字');
             $table->string('label')->comment('标签');
             $table->string('abstract_content')->comment('简介');
+            $table->string('video_url')->comment('视频url');
 
+            $table->unsignedInteger('score')->default(0)->comment('评分');
             $table->timestamps();
 
             $table->foreign('teacher_id')->references('id')->on('customers');
