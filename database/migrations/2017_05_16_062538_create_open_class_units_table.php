@@ -21,6 +21,7 @@ class CreateOpenClasseUnitsTable extends Migration
             $table->string('title')->unique()->comment('名字');
             $table->string('level')->comment('等级');
             $table->string('label')->comment('标签');
+            $table->boolean('if_free')->default(False)->comment('是否免费');
             $table->unsignedInteger('class_count')->default(0)->comment('课程数');
             $table->unsignedInteger('student_count')->default(0)->comment('学员数');
             $table->unsignedInteger('score')->default(0)->comment('评分');
