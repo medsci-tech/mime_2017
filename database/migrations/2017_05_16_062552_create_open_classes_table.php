@@ -14,6 +14,23 @@ class CreateOpenClassesTable extends Migration
     public function up()
     {
         //
+        Schema::create('open_classes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('teacher_id')->comment('讲师id');
+            $table->unsignedInteger('unit_id')->comment('系列id');
+
+            $table->unsignedInteger('chapter_number')->comment('章编号');
+            $table->unsignedInteger('section_number')->comment('节编号');
+
+            $table->string('title')->comment('名字');
+            $table->string('label')->comment('标签');
+            $table->string('abstract_content')->comment('简介');
+
+            $table->timestamps();
+
+            $table->foreign('teacher_id')->references('id')->on('customers');
+            $table->foreign('unit_id')->references('id')->on('open_class_units');
+        });
     }
 
     /**
@@ -24,5 +41,10 @@ class CreateOpenClassesTable extends Migration
     public function down()
     {
         //
+        Schema::table('open_classes', function(Blueprint $table) {
+            $table->dropForeign('open_classes_teacher_id_foreign');
+            $table->dropForeign('open_classes_unit_id_foreign');
+        });
+        Schema::dropIfExists('open_classes');
     }
 }

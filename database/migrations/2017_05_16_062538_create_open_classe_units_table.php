@@ -17,6 +17,7 @@ class CreateOpenClasseUnitsTable extends Migration
         Schema::create('open_class_units', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('title')->unique()->comment('名字');
             $table->string('level')->comment('等级');
             $table->string('label')->comment('标签');
             $table->unsignedInteger('class_count')->default(0)->comment('课程数');
