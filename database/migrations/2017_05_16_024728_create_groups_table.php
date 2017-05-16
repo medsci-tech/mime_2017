@@ -21,7 +21,8 @@ class CreateGroupsTable extends Migration
             $table->string('name')->comment('组名');
             $table->string('logo_url')->comment('logo url');
             $table->string('abstraction')->comment('简介');
-            $table->unsignedInteger('ceiling')->default(10)->comment('人数上限');
+            $table->unsignedInteger('member_ceiling')->default(10)->comment('人数上限');
+            $table->unsignedInteger('member_count')->default(0)->comment('实际人数');
             $table->timestamps();
 
             $table->foreign('leader_id')->references('id')->on('customers');
