@@ -21,8 +21,8 @@ class CreateCustomersTable extends Migration
 
             $table->string('phone', 11)->unique()->comment('用户电话');
             $table->string('password')->comment('用户密码');
-            $table->string('head_image_url')->nullable()->comment('头像url');
 
+            $table->string('head_url')->nullable()->comment('头像url');
             $table->string('name')->comment('名字');
             $table->string('sex')->comment('性别');
             $table->string('age')->comment('年龄');
