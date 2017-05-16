@@ -14,6 +14,12 @@ class CreateDiseasesTable extends Migration
     public function up()
     {
         //
+        Schema::create('diseases', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name_en')->unique()->comment('疾病名en');
+            $table->string('name_ch')->unique()->comment('疾病名ch');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ class CreateDiseasesTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('diseases');
     }
 }
