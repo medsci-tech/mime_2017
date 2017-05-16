@@ -18,9 +18,9 @@ class CreateAuthorizedCustomerArticlesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('customer_id')->comment('用户id');
 
-            $table->string('pub_date')->comment('发布日期');
-            $table->string('pub_journal')->comment('发布期刊');
             $table->string('pub_title')->comment('文章标题');
+            $table->string('pub_journal')->comment('发布期刊');
+            $table->string('pub_date')->comment('发布日期');
             $table->string('pub_url')->nullable()->comment('文章链接');
             $table->timestamps();
 
