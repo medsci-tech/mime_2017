@@ -18,6 +18,7 @@ class CreateOpenClasseUnitsTable extends Migration
             $table->increments('id');
 
             $table->string('level')->comment('等级');
+            $table->string('label')->comment('标签');
             $table->unsignedInteger('class_count')->default(0)->comment('课程数');
             $table->unsignedInteger('student_count')->default(0)->comment('学员数');
             $table->unsignedInteger('score')->default(0)->comment('评分');
