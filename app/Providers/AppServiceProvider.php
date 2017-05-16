@@ -14,8 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // 解决 php artisan migrate 执行报错
-        Schema::defaultStringLength(191);
+        
     }
 
     /**
