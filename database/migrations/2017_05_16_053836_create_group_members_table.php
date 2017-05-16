@@ -14,6 +14,15 @@ class CreateGroupMembersTable extends Migration
     public function up()
     {
         //
+        Schema::create('group_members', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('group_id')->comment('群组id');
+            $table->unsignedInteger('member_id')->comment('组员id');
+
+            $table->timestamps();
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('member_id')->references('id')->on('customers');
+        });
     }
 
     /**
@@ -24,5 +33,9 @@ class CreateGroupMembersTable extends Migration
     public function down()
     {
         //
+        Schema::table('group_members', function(Blueprint $table) {
+            $table->dropForeign('group_members_group_id_foreign');
+        });
+        Schema::dropIfExists('group_members');
     }
 }
