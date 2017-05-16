@@ -14,6 +14,16 @@ class CreateCustomerTitlesTable extends Migration
     public function up()
     {
         //
+        Schema::create('customer_titles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('customer_role_id')->comment('角色id');
+
+            $table->string('title_en')->comment('职称en');
+            $table->string('title_ch')->comment('职称ch');
+            $table->timestamps();
+
+            $table->foreign('customer_role_id')->references('id')->on('customer_roles');
+        });
     }
 
     /**
@@ -24,5 +34,9 @@ class CreateCustomerTitlesTable extends Migration
     public function down()
     {
         //
+        Schema::table('customer_titles', function(Blueprint $table) {
+            $table->dropForeign('customer_titles_role_id_foreign');
+        });
+        Schema::dropIfExists('customer_titles');
     }
 }
