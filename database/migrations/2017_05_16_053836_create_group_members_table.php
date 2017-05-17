@@ -35,6 +35,7 @@ class CreateGroupMembersTable extends Migration
         //
         Schema::table('group_members', function(Blueprint $table) {
             $table->dropForeign('group_members_group_id_foreign');
+            $table->dropForeign('group_members_member_id_foreign');
         });
         Schema::dropIfExists('group_members');
     }
