@@ -14,6 +14,12 @@ class CreateOpenClassTypesTable extends Migration
     public function up()
     {
         //
+        Schema::create('open_class_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('type_en', 30)->unique()->comment('用户角色');
+            $table->string('type_ch', 30)->unique()->comment('用户角色');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ class CreateOpenClassTypesTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('open_class_types');
     }
 }
