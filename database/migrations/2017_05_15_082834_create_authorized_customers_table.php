@@ -20,9 +20,9 @@ class CreateAuthorizedCustomersTable extends Migration
 
             $table->string('real_name')->comment('真实姓名');
             $table->string('photo_url')->comment('照片');
-            $table->string('id')->comment('身份证');
-            $table->string('pqc')->comment('医师资格证');
-            $table->string('ppqc')->comment('执业资格证');
+            $table->string('id_number')->comment('身份证');
+            $table->string('pqc_number')->comment('医师资格证');
+            $table->string('ppqc_number')->comment('执业资格证');
 
             $table->timestamps();
             $table->foreign('customer_id')->references('id')->on('customers');
