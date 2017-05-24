@@ -29,7 +29,9 @@ class CreateOpenClassUnitsTable extends Migration
             $table->decimal('score')->default(0)->comment('评分');
 
             $table->string('abstract_content')->comment('简介');
-            $table->string('abstract_video_url')->comment('宣传视频');
+            $table->string('video_url')->comment('视频url');
+            $table->string('video_app_id')->comment('腾讯云appID');
+            $table->string('video_file_id')->comment('腾讯云fileID');
 
             $table->foreign('disease_id')->references('id')->on('diseases');
             $table->foreign('type_id')->references('id')->on('open_class_types');
