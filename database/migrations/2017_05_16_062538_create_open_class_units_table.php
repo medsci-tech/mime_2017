@@ -21,11 +21,12 @@ class CreateOpenClassUnitsTable extends Migration
 
             $table->string('title')->unique()->comment('名字');
             $table->string('level')->comment('等级');
-            $table->string('label')->comment('标签');
+            $table->string('tag')->comment('标签');
             $table->boolean('if_free')->default(False)->comment('是否免费');
+            $table->decimal('price', 10, 2)->default(0)->comment('价格');
             $table->unsignedInteger('class_count')->default(0)->comment('课程数');
             $table->unsignedInteger('student_count')->default(0)->comment('学员数');
-            $table->unsignedInteger('score')->default(0)->comment('评分');
+            $table->decimal('score')->default(0)->comment('评分');
 
             $table->string('abstract_content')->comment('简介');
             $table->string('abstract_video_url')->comment('宣传视频');
