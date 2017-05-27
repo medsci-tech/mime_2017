@@ -20,6 +20,7 @@ class CreateOpenClassDiscussTable extends Migration
             $table->integer('customer_to_id')->comment('用户被回复id');
             $table->integer('customer_from_id')->comment('用户回复id');
             $table->text('content')->unique()->comment('内容');
+            $table->integer('praise')->unique()->comment('点赞数');
             $table->timestamps();
         });
     }
