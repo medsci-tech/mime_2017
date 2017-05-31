@@ -8,7 +8,7 @@ class CreateOpenClassAttachmentsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课附件表
      * @return void
      */
     public function up()

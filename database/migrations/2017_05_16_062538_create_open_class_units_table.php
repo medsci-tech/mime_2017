@@ -8,7 +8,7 @@ class CreateOpenClassUnitsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课系列表
      * @return void
      */
     public function up()

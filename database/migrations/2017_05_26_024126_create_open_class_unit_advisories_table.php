@@ -8,7 +8,7 @@ class CreateOpenClassUnitAdvisoriesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课系列咨询表
      * @return void
      */
     public function up()
@@ -18,8 +18,8 @@ class CreateOpenClassUnitAdvisoriesTable extends Migration
             $table->integer('parent_id')->comment('父级id');
             $table->integer('class_unit_id')->unique()->default(0)->comment('课程系列id');
             $table->integer('speaker_id')->unique()->comment('交流者id，包括咨询人和被咨询人');
-            $table->string('role')->unique()->comment('交流者角色');
-            $table->text('content')->unique()->comment('咨询内容');
+            $table->string('role')->comment('交流者角色');
+            $table->text('content')->comment('咨询内容');
             $table->timestamps();
         });
     }

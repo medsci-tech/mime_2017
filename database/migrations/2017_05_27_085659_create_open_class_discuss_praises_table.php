@@ -8,7 +8,7 @@ class CreateOpenClassDiscussPraisesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课视频交流点赞表
      * @return void
      */
     public function up()

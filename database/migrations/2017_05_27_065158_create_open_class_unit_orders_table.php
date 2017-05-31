@@ -8,7 +8,7 @@ class CreateOpenClassUnitOrdersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课系列订单表
      * @return void
      */
     public function up()
