@@ -8,7 +8,7 @@ class CreateOpenClassesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *  公开课视频表
      * @return void
      */
     public function up()
@@ -18,6 +18,7 @@ class CreateOpenClassesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('teacher_id')->nullable()->comment('讲师id');
             $table->unsignedInteger('unit_id')->comment('系列id');
+            $table->unsignedInteger('chapter_id')->comment('章节id');
 
             $table->unsignedInteger('chapter_number')->comment('章编号');
             $table->unsignedInteger('section_number')->comment('节编号');
@@ -36,6 +37,7 @@ class CreateOpenClassesTable extends Migration
 
             $table->foreign('teacher_id')->references('id')->on('customers');
             $table->foreign('unit_id')->references('id')->on('open_class_units');
+            $table->foreign('chapter_id')->references('id')->on('open_class_chapters');
         });
     }
 
@@ -49,6 +51,7 @@ class CreateOpenClassesTable extends Migration
         //
         Schema::table('open_classes', function(Blueprint $table) {
             $table->dropForeign('open_classes_teacher_id_foreign');
+            $table->dropForeign('open_classes_chapter_id_foreign');
             $table->dropForeign('open_classes_unit_id_foreign');
         });
         Schema::dropIfExists('open_classes');
