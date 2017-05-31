@@ -18,7 +18,6 @@ class CreateOpenClassChaptersTable extends Migration
             $table->integer('unit_id')->unique()->comment('系列id');
             $table->integer('title')->comment('章节名称');
             $table->timestamps();
-            $table->foreign('discuss_id')->references('id')->on('open_class_discuss');
         });
     }
 
