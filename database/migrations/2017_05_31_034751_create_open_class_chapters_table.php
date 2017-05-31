@@ -16,6 +16,7 @@ class CreateOpenClassChaptersTable extends Migration
         Schema::create('open_class_chapters', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('unit_id')->unique()->comment('系列id');
+            $table->integer('number')->comment('章节编号');
             $table->integer('title')->comment('章节名称');
             $table->timestamps();
         });
