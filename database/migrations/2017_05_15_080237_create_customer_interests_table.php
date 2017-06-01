@@ -13,7 +13,12 @@ class CreateCustomerInterestsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('customer_interests', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('interest_en')->unique()->comment('用户兴趣en');
+            $table->string('interest_zh')->unique()->comment('用户兴趣zh');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class CreateCustomerInterestsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('customer_interests');
     }
 }

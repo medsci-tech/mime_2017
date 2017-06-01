@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomerTitlesTable extends Migration
+class CreateCustomerOfficesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCustomerTitlesTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('customer_titles', function (Blueprint $table) {
+        Schema::create('customer_offices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title_en')->comment('职称en');
-            $table->string('title_zh')->comment('职称zh');
+            $table->string('office_en', 30)->unique()->comment('用户科室');
+            $table->string('office_zh', 30)->unique()->comment('用户科室');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateCustomerTitlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer_titles');
+        Schema::dropIfExists('customer_offices');
     }
 }

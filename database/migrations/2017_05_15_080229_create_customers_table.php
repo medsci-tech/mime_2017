@@ -16,7 +16,7 @@ class CreateCustomersTable extends Migration
         //
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('customer_role_id')->comment('角色id');
+            $table->unsignedInteger('role_id')->comment('角色id');
             $table->unsignedInteger('hospital_id')->comment('医院id');
 
             $table->string('phone', 11)->unique()->comment('用户电话');
@@ -26,8 +26,9 @@ class CreateCustomersTable extends Migration
             $table->string('name')->comment('名字');
             $table->string('sex')->comment('性别');
             $table->string('age')->comment('年龄');
-            $table->unsignedInteger('title_id')->comment('title id');
-            $table->string('office')->comment('科室');
+            $table->unsignedInteger('title_id')->comment('职称');
+            $table->unsignedInteger('office_id')->comment('科室');
+            $table->string('interest_id')->comment('兴趣');
             $table->boolean('if_authorized')->default(False)->comment('是否认证');
             $table->string('invite_phone', 11)->nullable()->comment('邀请人电话');
 
