@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('open_class', 'OpenClassController@index');
+Route::get('open_class/{id}', 'OpenClassController@unit')->where('id','[0-9]+');
