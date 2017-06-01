@@ -15,7 +15,7 @@ class CreateOpenClassDiscussPraisesTable extends Migration
     {
         Schema::create('open_class_discuss_praises', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('discuss_id')->unique()->default(0)->comment('课程交流id');
+            $table->unsignedInteger('discuss_id')->unique()->default(0)->comment('课程交流id');
             $table->integer('customer_id')->comment('用户id');
             $table->tinyInteger('is_praised')->comment('是否已点赞');
             $table->timestamps();
