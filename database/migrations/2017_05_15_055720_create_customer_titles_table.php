@@ -19,7 +19,7 @@ class CreateCustomerTitlesTable extends Migration
             $table->unsignedInteger('customer_role_id')->comment('角色id');
 
             $table->string('title_en')->comment('职称en');
-            $table->string('title_ch')->comment('职称ch');
+            $table->string('title_zh')->comment('职称zh');
             $table->timestamps();
 
             $table->foreign('customer_role_id')->references('id')->on('customer_roles');

@@ -17,7 +17,7 @@ class CreateOpenClassTypesTable extends Migration
         Schema::create('open_class_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type_en', 30)->unique()->comment('课程分类');
-            $table->string('type_ch', 30)->unique()->comment('课程分类');
+            $table->string('type_zh', 30)->unique()->comment('课程分类');
             $table->integer('parent_id')->unique()->default(0)->comment('父级id');
             $table->string('parent_node')->comment('父级节点');
             $table->timestamps();

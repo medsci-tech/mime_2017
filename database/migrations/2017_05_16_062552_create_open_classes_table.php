@@ -20,8 +20,7 @@ class CreateOpenClassesTable extends Migration
             $table->unsignedInteger('unit_id')->comment('系列id');
             $table->unsignedInteger('chapter_id')->comment('章节id');
 
-            $table->unsignedInteger('chapter_number')->comment('章编号');
-            $table->unsignedInteger('section_number')->comment('节编号');
+            $table->unsignedInteger('section_number')->comment('视频编号');
 
             $table->string('title')->comment('名字');
             $table->string('tag')->comment('标签');
