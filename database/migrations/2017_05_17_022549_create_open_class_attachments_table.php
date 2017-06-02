@@ -19,7 +19,7 @@ class CreateOpenClassAttachmentsTable extends Migration
             $table->unsignedInteger('class_id')->comment('课程id');
 
             $table->string('name')->comment('名字');
-            $table->decimal('size', 10, 2)->comment('大小');
+            $table->string('size')->comment('大小');
             $table->string('url')->comment('url');
             $table->timestamps();
 
