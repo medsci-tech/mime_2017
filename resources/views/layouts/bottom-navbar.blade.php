@@ -1,0 +1,42 @@
+<nav class="navbar navbar-bottom bg-faded">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col col-md-12 row">
+                <div class="col-sm-6 col-md-4">
+                    <p><b>友情链接</b></p>
+                    <ul class="list-unstyled">
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <p><b>产品与服务</b></p>
+                    <ul class="list-unstyled">
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <p><b>关于</b></p>
+                    <ul class="list-unstyled">
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    <span>Copyright©Medscience-tech.All rights reserved.&emsp;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
