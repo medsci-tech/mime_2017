@@ -13,7 +13,6 @@ class Customer extends Model
         'hospital_id',
         'title_id',
         'office_id',
-        'interest_id',
 
         'phone',
         'password',
