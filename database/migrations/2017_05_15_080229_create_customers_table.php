@@ -34,7 +34,7 @@ class CreateCustomersTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('customer_role_id')->references('id')->on('customer_roles');
+            $table->foreign('role_id')->references('id')->on('customer_roles');
             $table->foreign('hospital_id')->references('id')->on('hospitals');
             $table->foreign('title_id')->references('id')->on('customer_titles');
         });
