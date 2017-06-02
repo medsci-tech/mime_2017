@@ -15,8 +15,8 @@ class CreateCustomerOfficesTable extends Migration
     {
         Schema::create('customer_offices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('office_en', 30)->unique()->comment('用户科室');
-            $table->string('office_zh', 30)->unique()->comment('用户科室');
+            $table->string('office_en', 30)->comment('用户科室');
+            $table->string('office_zh', 30)->comment('用户科室');
             $table->timestamps();
         });
     }

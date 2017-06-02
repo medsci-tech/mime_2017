@@ -15,8 +15,8 @@ class CreateCustomerInterestsTable extends Migration
     {
         Schema::create('customer_interests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('interest_en')->unique()->comment('用户兴趣en');
-            $table->string('interest_zh')->unique()->comment('用户兴趣zh');
+            $table->string('interest_en')->comment('用户兴趣en');
+            $table->string('interest_zh')->comment('用户兴趣zh');
             $table->timestamps();
         });
     }

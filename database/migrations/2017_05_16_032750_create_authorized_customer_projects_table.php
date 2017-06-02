@@ -19,7 +19,7 @@ class CreateAuthorizedCustomerProjectsTable extends Migration
             $table->unsignedInteger('customer_id')->comment('用户id');
 
             $table->string('project_title')->comment('项目标题');
-            $table->string('project_date')->comment('项目日期');
+            $table->timestamp('project_date')->comment('项目日期');
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on('customers');

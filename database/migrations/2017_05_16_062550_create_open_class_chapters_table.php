@@ -17,7 +17,8 @@ class CreateOpenClassChaptersTable extends Migration
             $table->increments('id');
             $table->integer('unit_id')->unique()->comment('系列id');
             $table->integer('number')->comment('章节编号');
-            $table->integer('title')->comment('章节名称');
+            $table->string('title')->comment('章节名称');
+            $table->tinyInteger('is_show')->default(1)->comment('是否显示章节名称');
             $table->timestamps();
         });
     }
