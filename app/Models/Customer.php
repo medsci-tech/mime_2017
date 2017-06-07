@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
     protected $table = 'customers';
 
@@ -22,6 +23,10 @@ class Customer extends Model
         'age',
         'if_authorized',
         'invite_phone',
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     public function role(){
