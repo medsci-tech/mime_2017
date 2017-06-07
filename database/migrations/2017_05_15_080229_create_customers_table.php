@@ -28,7 +28,6 @@ class CreateCustomersTable extends Migration
             $table->string('age')->comment('年龄');
             $table->unsignedInteger('title_id')->comment('职称');
             $table->unsignedInteger('office_id')->comment('科室');
-            $table->string('interest_id')->comment('兴趣');
             $table->boolean('if_authorized')->default(False)->comment('是否认证');
             $table->string('invite_phone', 11)->nullable()->comment('邀请人电话');
 
