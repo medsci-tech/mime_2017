@@ -21,6 +21,7 @@ class CreateCustomersTable extends Migration
 
             $table->string('phone', 11)->unique()->comment('用户电话');
             $table->string('password')->comment('用户密码');
+            $table->rememberToken();
 
             $table->string('head_url')->nullable()->comment('头像url');
             $table->string('name')->comment('名字');
