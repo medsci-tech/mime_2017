@@ -28,7 +28,8 @@ class AccountController extends Controller
     public function login_post(Request $request){
         $account = $request->input('phone');
         $password = $request->input('password');
-        $res = Auth::attempt(['phone' => $account, 'password' => $password]);
+        $remember = $request->input('remember');
+        $res = Auth::attempt(['phone' => $account, 'password' => $password], $remember);
         if($res){
             return $this->returnDataFormat(200, '登陆成功');
         }else{
@@ -65,6 +66,11 @@ class AccountController extends Controller
 
     public function forgot_pwd_post(){
         return 'login view';
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 
 }
