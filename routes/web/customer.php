@@ -12,3 +12,5 @@
 */
 
 Route::get('customer', 'CustomerController@index');
+Route::get('customer/profile', 'CustomerController@editProfile');
+Route::post('customer/profile', 'CustomerController@updateProfile');

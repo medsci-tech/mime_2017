@@ -13,9 +13,19 @@ class CustomerController extends Controller
     }
 
     public function index(){
-//        return redirect('account/register');
         $res = Auth::user();
         dd($res);
-//        return redirect('account/register');
+    }
+
+    // 信息编辑
+    public function editProfile(){
+        $res = Auth::user();
+        return view('customer.profile',[
+            'data' => $res,
+        ]);
+    }
+
+    public function updateProfile(Request $request){
+
     }
 }
