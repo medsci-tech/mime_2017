@@ -16,3 +16,4 @@ Route::get('account/login', 'AccountController@login');
 Route::post('account/login_post', 'AccountController@login_post');
 Route::get('account/register', 'AccountController@register');
 Route::post('account/register_post', 'AccountController@register_post');
+Route::get('account/logout', 'AccountController@logout');
