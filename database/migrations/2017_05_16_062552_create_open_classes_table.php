@@ -23,7 +23,6 @@ class CreateOpenClassesTable extends Migration
             $table->unsignedInteger('section_number')->comment('视频编号');
 
             $table->string('title')->comment('名字');
-            $table->string('tag')->comment('标签');
             $table->string('abstract_content')->comment('简介');
             $table->string('video_url')->comment('视频url');
             $table->string('video_app_id')->comment('腾讯云appID');
