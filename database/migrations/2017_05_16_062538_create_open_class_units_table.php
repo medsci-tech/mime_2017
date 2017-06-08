@@ -20,8 +20,7 @@ class CreateOpenClassUnitsTable extends Migration
             $table->unsignedInteger('type_id')->comment('课程分类');
 
             $table->string('title')->unique()->comment('名字');
-            $table->string('level')->comment('等级');
-            $table->string('tag')->comment('标签');
+            $table->string('level_id')->comment('等级');
             $table->boolean('if_free')->default(False)->comment('是否免费');
             $table->decimal('price', 10, 2)->default(0)->comment('价格');
             $table->unsignedInteger('class_count')->default(0)->comment('课程数');
