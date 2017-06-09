@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('account/get_token', 'AccountController@get_token');
+Route::get('account/get_token', 'AccountController@getToken');
 Route::get('account/login', 'AccountController@login');
-Route::post('account/login_post', 'AccountController@login_post');
+Route::post('account/login_post', 'AccountController@loginPost');
 Route::get('account/register', 'AccountController@register');
-Route::post('account/register_post', 'AccountController@register_post');
+Route::post('account/register_post', 'AccountController@registerPost');
 Route::get('account/logout', 'AccountController@logout');

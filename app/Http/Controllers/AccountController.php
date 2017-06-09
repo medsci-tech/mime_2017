@@ -16,7 +16,7 @@ class AccountController extends Controller
         return 'phone';
     }
 
-    public function get_token(){
+    public function getToken(){
         return csrf_token();
     }
 
@@ -25,7 +25,7 @@ class AccountController extends Controller
         return 'login view';
     }
 
-    public function login_post(Request $request){
+    public function loginPost(Request $request){
         $account = $request->input('phone');
         $password = $request->input('password');
         $remember = $request->input('remember');
@@ -42,7 +42,7 @@ class AccountController extends Controller
         return 'register view';
     }
 
-    public function register_post(Request $request){
+    public function registerPost(Request $request){
         $account = $request->input('phone');
         $check_phone = Customer::where('phone', $account)->first();
         if($check_phone){
@@ -60,11 +60,11 @@ class AccountController extends Controller
     }
 
     // 忘记密码
-    public function forgot_pwd(){
+    public function forgotPwd(){
         return 'login view';
     }
 
-    public function forgot_pwd_post(){
+    public function forgotPwdPost(){
         return 'login view';
     }
 
