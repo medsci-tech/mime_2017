@@ -12,5 +12,8 @@
 */
 
 Route::get('open_class', 'OpenClassController@index');
+
 Route::get('open_class/{id}', 'OpenClassController@unit')->where('id','[0-9]+');
+Route::get('open_class/{id}/catalogue', 'OpenClassController@unitCatalogue')->where('id','[0-9]+');
+
 Route::get('open_class/course/{id}', 'OpenClassController@course')->where('id','[0-9]+');

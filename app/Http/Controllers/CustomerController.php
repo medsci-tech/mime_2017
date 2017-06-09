@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +27,7 @@ class CustomerController extends Controller
     }
 
     public function updateProfile(Request $request){
-
+        $data = $request->all();
+        $res = Customer::find(Auth::id())->update($data);
     }
 }

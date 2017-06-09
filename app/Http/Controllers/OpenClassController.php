@@ -18,6 +18,11 @@ class OpenClassController extends Controller
         return $unit;
     }
 
+    public function unitCatalogue($id){
+        $unit = OpenClassUnit::find($id);
+        return $id;
+    }
+
     public function course($id){
         $course = OpenClass::find($id);
     }
